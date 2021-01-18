@@ -1,0 +1,117 @@
+.profile {
+    padding: 1rem;
+}
+
+.profile .top {
+    display: flex;
+    align-items: center;
+}
+
+.profile .top .user-pic {
+    margin-right: 1rem;
+}
+
+.top .user-pic .user-avatar {
+    width: 150px;
+    height: 150px;
+}
+
+.top .user-info {
+    width: 100%;
+}
+
+.top .user-info .account {
+    display: flex;
+    justify-content: space-between;
+}
+
+.account .name .location {
+    display: flex;
+    align-items: center;
+}
+
+.location>p {
+    font-family: inherit;
+    color: #330392;
+}
+
+.location>svg {
+    color: #330392;
+}
+
+.account .account-details {
+    margin-left: 1rem;
+}
+
+.account-details .follow-user {
+    width: 110px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #8E2DE2;
+    background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);
+    background: linear-gradient(to right, #4A00E0, #8E2DE2);
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: large;
+    transition: 200ms ease-in-out;
+    box-shadow: 2px 3px 1px 2px rgb(248, 246, 246);
+}
+
+.account-details .follow-user:hover {
+    background: linear-gradient(to left, #7838f8, #400376);
+}
+
+.account-details .goto-user-profile {
+    font-size: large;
+    width: 110px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0d264b;
+    background: -webkit-linear-gradient(to right, #0d264b, #0d1ad6);
+    background: linear-gradient(to right, #0d264b, #0d1ad6);
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 200ms ease-in-out;
+    box-shadow: 2px 3px 1px 2px rgb(248, 246, 246);
+}
+
+.account-details .goto-user-profile:hover {
+    background: linear-gradient(to left, #063985, #06439e);
+}
+
+.user-bio {
+    font-size: large;
+    font-family: Montserrat;
+    font-weight: 500;
+}
+
+.profile .bottom {
+    margin-top: 1.5rem;
+    display: flex;
+}
+
+.bottom .user-account-info {
+    display: flex;
+    align-items: center;
+    margin-right: 4rem;
+    padding: .5rem;
+    color: #1a2031;
+}
+
+.user-account-info .info-icon {
+    margin-right: 1rem;
+    font-size: 2.5rem;
+    color: #330392;
+}
+
+.user-account-info .user-account-item>span {
+    font-size: large;
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+}
