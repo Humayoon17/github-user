@@ -14,7 +14,7 @@ function App() {
   const [otherUser, setOtherUser] = useState(null);
 
   const [searchInput, setSearchInput] = useState('');
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState({
     type: false,
     message: '',
@@ -78,7 +78,7 @@ function App() {
     );
   }
 
-  if (otherUser && otherUser) {
+  if (otherUser) {
     searchedElement = (
       <Profile
         name={otherUser.name}
