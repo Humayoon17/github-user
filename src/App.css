@@ -5,7 +5,7 @@
 }
 
 .App .user-details-tabs {
-    padding: 1.5rem;
+    padding: 0;
     display: flex;
     align-items: center;
     border-bottom: 1px solid #c7c2ce;
@@ -27,7 +27,7 @@
     border-bottom: 5px solid #380b82 !important;
 }
 
-.container>.profile-card {
+.container .profile-card {
     border-radius: 20px;
     margin-bottom: 1rem;
     margin-top: 2rem;
@@ -36,6 +36,16 @@
 
 
 /* Responsive */
+
+@media all and (max-width: 360px) {
+    .hide-bottom-line>div>span {
+        display: none;
+    }
+    .hide-bottom-line div {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
 
 @media all and (max-width: 670px) {
     .profile .top {
