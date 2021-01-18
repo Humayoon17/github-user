@@ -12,6 +12,18 @@
     margin-bottom: 3rem;
 }
 
+.divider {
+    margin-top: 1rem !important;
+    margin-bottom: 2rem !important;
+}
+
+.loading {
+    margin-top: 3rem;
+    display: grid;
+    place-content: center;
+    place-items: center;
+}
+
 .user-details-tabs .tab-item {
     height: 35px;
     margin-right: 3rem;

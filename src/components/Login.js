@@ -3,10 +3,23 @@ import { GitHub } from '@material-ui/icons';
 import GithubLogo from '../image/github.png';
 import React from 'react';
 import '../styles/Login.css';
+import auth, { provider } from '../firebase';
 
-export default function Login() {
+export default function Login({ setCurrentUser, setUserInfo }) {
   const signInWithGithub = () => {
-    /// sign in with github
+    auth
+      .signInWithPopup(provider)
+      .then((result) => {
+        // The signed-in user full info.
+        const currentUser = result.user;
+        const userInfo = result.additionalUserInfo.profile;
+
+        setCurrentUser(currentUser);
+        setUserInfo(userInfo);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
   };
 
   return (
@@ -18,7 +31,7 @@ export default function Login() {
         </div>
       </div>
       <div className='loging-btn'>
-        <Button>
+        <Button onClick={signInWithGithub}>
           <GitHub className='github-icon' />
           Sign in with Github
         </Button>

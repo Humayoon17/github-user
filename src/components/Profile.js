@@ -1,4 +1,4 @@
-import { Avatar } from '@material-ui/core';
+import { Avatar, CircularProgress } from '@material-ui/core';
 import PeopleIcon from '@material-ui/icons/People';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import BookIcon from '@material-ui/icons/Book';
@@ -7,33 +7,47 @@ import LocationOnIcon from '@material-ui/icons/LocationOn';
 import React from 'react';
 import '../styles/Profile.css';
 
-export default function Profile() {
+export default function Profile({
+  name,
+  avatar_url,
+  html_url,
+  location,
+  bio,
+  followers,
+  following,
+  public_repos,
+}) {
   return (
     <div className='profile'>
       <div className='top'>
         <div className='user-pic'>
-          <Avatar
-            src='https://avatars1.githubusercontent.com/u/59541560?s=460&u=88307faa892882633594e8497782c4dfb238380b&v=4'
-            className='user-avatar'
-          />
+          {!avatar_url ? (
+            <CircularProgress />
+          ) : (
+            <Avatar src={avatar_url} className='user-avatar' />
+          )}
         </div>
         <div className='user-info'>
           <div className='account'>
             <div className='name'>
-              <h3>Humayoon Muhammadi</h3>
+              <h3>{name}</h3>
               <div className='location'>
                 <LocationOnIcon />
-                <p>Kabul, Afghanistan</p>
+                <p>{location}</p>
               </div>
             </div>
             <div className='account-details'>
-              <div className='follow-user'>
-                Follow
-                {/* <Link to="follow link" >Follow </Link> */}
-              </div>
+              <a
+                style={{ color: 'white' }}
+                href={html_url}
+                target='_blank'
+                rel='noreferrer'
+              >
+                <div className='follow-user'>Follow </div>
+              </a>
             </div>
           </div>
-          <span className='user-bio'>i am a good developer</span>
+          <span className='user-bio'>{bio}</span>
         </div>
       </div>
       <div className='bottom'>
@@ -41,21 +55,21 @@ export default function Profile() {
           <PeopleIcon className='info-icon' />
           <div className='user-account-item'>
             <h3>Followers</h3>
-            <span>120</span>
+            <span>{followers}</span>
           </div>
         </div>
         <div className='user-account-info'>
           <AccountCircleIcon className='info-icon' />
           <div className='user-account-item'>
-            <h3>Following</h3>
-            <span>20</span>
+            <h3>Followings</h3>
+            <span>{following}</span>
           </div>
         </div>
         <div className='user-account-info'>
           <BookIcon className='info-icon' />
           <div className='user-account-item'>
             <h3>Repos</h3>
-            <span>4</span>
+            <span>{public_repos}</span>
           </div>
         </div>
       </div>
